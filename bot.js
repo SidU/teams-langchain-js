@@ -3,6 +3,7 @@ const { OpenAI } = require('langchain');
 const { initializeAgentExecutor } = require('langchain/agents');
 const { Calculator } = require('langchain/tools');
 const { BingSerpAPI } = require('./tools/BingSerpAPI');
+const { DadJokeAPI } = require('./tools/DadJokeAPI');
 
 class EchoBot extends ActivityHandler {
 
@@ -11,7 +12,7 @@ class EchoBot extends ActivityHandler {
         super();
 
         this.model = new OpenAI({ temperature: 0.9 });
-        this.tools = [new BingSerpAPI(), new Calculator()];
+        this.tools = [new BingSerpAPI(), new Calculator(), new DadJokeAPI()];
         
         this.onMessage(async (context, next) => {
 
