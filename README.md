@@ -1,8 +1,6 @@
 # teams-langchain-js
 
-Demonostrate how to leverage LangChainJS in Bot Framework based bots
-
-This bot has been created using [Bot Framework](https://dev.botframework.com), it shows how to create a simple bot that accepts input from the user and echoes it back.
+Demo showing how to leverage LangChainJS in Bot Framework based bots for Teams / Outlook / Slack, etc.
 
 ## Prerequisites
 
@@ -45,7 +43,7 @@ To learn more about deploying a bot to Azure, see [Deploy your bot to Azure](htt
 
 
 ## Further reading
-
+- [LangChainJS](https://hwchase17.github.io/langchainjs/docs/getting-started)
 - [Bot Framework Documentation](https://docs.botframework.com)
 - [Bot Basics](https://docs.microsoft.com/azure/bot-service/bot-builder-basics?view=azure-bot-service-4.0)
 - [Dialogs](https://docs.microsoft.com/en-us/azure/bot-service/bot-builder-concept-dialog?view=azure-bot-service-4.0)
