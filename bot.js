@@ -1,6 +1,3 @@
-// Copyright (c) Microsoft Corporation. All rights reserved.
-// Licensed under the MIT License.
-
 const { ActivityHandler, MessageFactory } = require('botbuilder');
 const { OpenAI } = require('langchain');
 const { initializeAgentExecutor } = require('langchain/agents');
@@ -15,8 +12,6 @@ class EchoBot extends ActivityHandler {
 
         this.model = new OpenAI({ temperature: 0.9 });
         this.tools = [new BingSerpAPI(), new Calculator()];
-        
-        // See https://aka.ms/about-bot-activity-message to learn more about the message and other activity types.
         
         this.onMessage(async (context, next) => {
 
@@ -33,18 +28,18 @@ class EchoBot extends ActivityHandler {
     
                 const input = context.activity.text;
     
-                const execResponse = await this.executor.call(
-                    {
-                        input
-                    }
-                );
+                const execResponse = await this.executor.call({input});
     
                 const replyText = execResponse.output;
 
-                // Print intermediate steps.
-                console.log(JSON.stringify(execResponse.intermediateSteps, null, 2));
+                // Print the log property of each action in intermediateSteps.
+                // This is useful for debugging.
+                execResponse.intermediateSteps.forEach((step) => {
+                    console.log("--------------------");
+                    console.log(step.action.log);
+                    console.log(`Observation: ${step.observation}`);
+                });
 
-                //const replyText = await this.model.call(context.activity.text);
                 await context.sendActivity(MessageFactory.text(replyText, replyText));
                 
             }

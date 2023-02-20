@@ -1,8 +1,6 @@
 # teams-langchain-js
 
-Demonostrate how to leverage LangChainJS in Bot Framework based bots
-
-This bot has been created using [Bot Framework](https://dev.botframework.com), it shows how to create a simple bot that accepts input from the user and echoes it back.
+Demo of leveraging LangChainJS in Bot Framework based bots
 
 ## Prerequisites
 

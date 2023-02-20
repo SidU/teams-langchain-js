@@ -20,8 +20,6 @@ class BingSerpAPI extends Tool {
 
   async call(input) {
 
-    //console.log("BingSerpAPI: searching for " + input);
-
     const headers = { "Ocp-Apim-Subscription-Key": this.key};
     const params = { q: input, textDecorations: true, textFormat: "HTML" };
     const searchUrl = new URL('https://api.bing.microsoft.com/v7.0/search');
@@ -39,8 +37,6 @@ class BingSerpAPI extends Tool {
     const res = await response.json();
 
     const myresponse = res.webPages.value[0].snippet;
-
-    //console.log("BingSerpAPI: response: " + myresponse);
 
     return myresponse;
   }
