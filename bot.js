@@ -4,6 +4,7 @@ const { initializeAgentExecutor } = require('langchain/agents');
 const { Calculator } = require('langchain/tools');
 const { BingSerpAPI } = require('./tools/BingSerpAPI');
 const { DadJokeAPI } = require('./tools/DadJokeAPI');
+const { PetFinderAPI } = require('./tools/FindPetsAPI');
 
 class EchoBot extends ActivityHandler {
 
@@ -16,7 +17,8 @@ class EchoBot extends ActivityHandler {
         this.tools = [
             new BingSerpAPI(), 
             new Calculator(), 
-            new DadJokeAPI()
+            new DadJokeAPI(),
+            new PetFinderAPI()
         ];
         
         this.onMessage(async (context, next) => {

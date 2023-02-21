@@ -5,7 +5,7 @@ class DadJokeAPI extends Tool {
   constructor() {
     super();
     this.name = "dadjoke";
-    this.description = "Get a dad joke about a specific topic";
+    this.description = "a dad joke generator. get a dad joke about a specific topic. input should be a search term.";
   }
 
   async call(input) {
