@@ -1,6 +1,8 @@
-# teams-langchain-js
+# teams-langchain-js ✨
 
-Demo of leveraging LangChainJS in Bot Framework based bots
+Demo showing how to leverage LangChainJS in Bot Framework based bots for Teams / Outlook / Slack, etc.
+
+[Watch demo on YouTube](https://youtu.be/hPaIEVTjY4o) 
 
 ## Prerequisites
 
@@ -25,6 +27,11 @@ Demo of leveraging LangChainJS in Bot Framework based bots
     npm start
     ```
 
+## Bing SERP API
+Signup for Bing API key [here](https://aka.ms/bingapisignup). Paste it's value in the `.env` file.
+
+`BingApiKey=<paste_your_key_here>`
+
 ## Testing the bot using Bot Framework Emulator
 
 [Bot Framework Emulator](https://github.com/microsoft/botframework-emulator) is a desktop application that allows bot developers to test and debug their bots on localhost or running remotely through a tunnel.
@@ -43,7 +50,8 @@ To learn more about deploying a bot to Azure, see [Deploy your bot to Azure](htt
 
 
 ## Further reading
-
+- [LangChainJS](https://hwchase17.github.io/langchainjs/docs/getting-started)
+- [ReAct paper](https://arxiv.org/pdf/2210.03629.pdf)
 - [Bot Framework Documentation](https://docs.botframework.com)
 - [Bot Basics](https://docs.microsoft.com/azure/bot-service/bot-builder-basics?view=azure-bot-service-4.0)
 - [Dialogs](https://docs.microsoft.com/en-us/azure/bot-service/bot-builder-concept-dialog?view=azure-bot-service-4.0)
