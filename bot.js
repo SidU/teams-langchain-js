@@ -12,7 +12,12 @@ class EchoBot extends ActivityHandler {
         super();
 
         this.model = new OpenAI({ temperature: 0.9 });
-        this.tools = [new BingSerpAPI(), new Calculator(), new DadJokeAPI()];
+
+        this.tools = [
+            new BingSerpAPI(), 
+            new Calculator(), 
+            new DadJokeAPI()
+        ];
         
         this.onMessage(async (context, next) => {
 

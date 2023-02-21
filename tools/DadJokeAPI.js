@@ -1,34 +1,35 @@
-const { Tool } = require('langchain/agents');
+const { Tool } = require('langchain/tools');
 const fetch = require('node-fetch');
 
 class DadJokeAPI extends Tool {
-
   constructor() {
     super();
-    this.baseUrl = "https://icanhazdadjoke.com/";
+    this.name = "dadjoke";
+    this.description = "Get a dad joke about a specific topic";
   }
 
-  name = "dad joke";
+  async call(input) {
+    const headers = { "Accept": "application/json" };
+    const searchUrl = `https://icanhazdadjoke.com/search?term=${input}`;
 
-  async call(searchTerm) {
-    const url = `${this.baseUrl}/search?term=${searchTerm}`;
-    const response = await fetch(url, {
-      headers: {
-        Accept: "application/json"
-      }
-    });
+    const response = await fetch(searchUrl, { headers });
 
     if (!response.ok) {
       throw new Error(`HTTP error ${response.status}`);
     }
 
     const data = await response.json();
+    const jokes = data.results;
 
-    // Return the first result.
-    return data?.results[0]?.joke;
+    if (jokes.length === 0) {
+      return `No dad jokes found about ${input}`;
+    }
+
+    const randomIndex = Math.floor(Math.random() * jokes.length);
+    const randomJoke = jokes[randomIndex].joke;
+
+    return randomJoke;
   }
-
-  description = "a tool to retrieve a random dad joke from icanhazdadjoke. input should be a search term.";
 }
 
 module.exports.DadJokeAPI = DadJokeAPI;
