@@ -6,6 +6,7 @@ const { BingSerpAPI } = require('./tools/BingSerpAPI');
 const { DadJokeAPI } = require('./tools/DadJokeAPI');
 const { PetFinderAPI } = require('./tools/FindPetsAPI');
 const { IFTTTWebhook } = require('./tools/IFTTTWebhook');
+const { YouTubeSearchAPI } = require('./tools/YoutubeSearchAPI');
 
 class EchoBot extends ActivityHandler {
 
@@ -21,6 +22,7 @@ class EchoBot extends ActivityHandler {
             new DadJokeAPI(),
             new PetFinderAPI(),
             // new IFTTTWebhook('https://maker.ifttt.com/trigger/{eventName}/json/with/key/{key}', '{ServiceName}', '{Scenario specific description}'),
+            new YouTubeSearchAPI(),
         ];
         
         this.onMessage(async (context, next) => {
