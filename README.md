@@ -15,6 +15,8 @@ Demo showing how to leverage LangChainJS in Bot Framework based bots for Teams /
 
 ## To run the bot
 
+- Make a copy of `.env.example` to `.env`, get your OpenAI key from [https://beta.openai.com/account/api-keys](https://beta.openai.com/account/api-keys) and paste it in the `.env` file.
+
 - Install modules
 
     ```bash
